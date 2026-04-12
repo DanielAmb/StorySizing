@@ -2,32 +2,24 @@
 
 Frontend:
 
-cd StorySizing
-
-npm install
-
+cd StorySizing <br />
+npm install  <br />
 npm start
 
 Backend:
 
-cd backend
-
-npm install
-
+cd backend  <br />
+npm install  <br />
 npm start
 
 Commit and push:
 
-git add .
-
-git commit -m "description"
-
+git add .  <br />
+git commit -m "description"  <br />
 git push origin main
 
-git add README.md
-
-git commit -m "Update README"
-
+git add README.md  <br />
+git commit -m "Update README"  <br />
 git push origin main
 
 Before development:
