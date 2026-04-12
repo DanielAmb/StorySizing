@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import './App.css';
 
+const API_BASE = 'https://storysizing-api-g7etekc7e4brc4ad.canadacentral-01.azurewebsites.net';
+
 function App() {
   const [view, setView] = useState('home'); // home, team
   const [teamId, setTeamId] = useState('');
@@ -23,7 +25,7 @@ function App() {
     const cleanupTeam = () => {
       if (view !== 'team' || !teamId || !userName || status?.leader !== userName) return;
 
-      const url = 'http://localhost:7071/api/deleteTeam';
+      const url = `${API_BASE}/api/deleteTeam`;
       const body = JSON.stringify({ teamId, userName });
 
       if (navigator.sendBeacon) {
@@ -43,7 +45,7 @@ function App() {
 
   const fetchStatus = async () => {
     try {
-      const res = await fetch(`http://localhost:7071/api/getStatus?teamId=${teamId}`);
+      const res = await fetch(`${API_BASE}/api/getStatus?teamId=${teamId}`);
       const data = await res.json();
       if (!res.ok) {
         setMessage(data.error);
@@ -61,7 +63,7 @@ function App() {
   const createTeam = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:7071/api/createTeam", {
+      const res = await fetch(`${API_BASE}/api/createTeam`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ teamName, leaderName: createUserName }),
@@ -83,7 +85,7 @@ function App() {
   const joinTeam = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:7071/api/joinTeam", {
+      const res = await fetch(`${API_BASE}/api/joinTeam`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ teamId, userName: joinUserName }),
@@ -103,7 +105,7 @@ function App() {
 
   const startVoting = async () => {
     try {
-      const res = await fetch("http://localhost:7071/api/startVoting", {
+      const res = await fetch(`${API_BASE}/api/startVoting`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ teamId, userName }),
@@ -121,7 +123,7 @@ function App() {
 
   const resetVotes = async () => {
     try {
-      const res = await fetch("http://localhost:7071/api/resetVotes", {
+      const res = await fetch(`${API_BASE}/api/resetVotes`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ teamId, userName }),
@@ -139,7 +141,7 @@ function App() {
 
   const vote = async (voteValue) => {
     try {
-      const res = await fetch("http://localhost:7071/api/vote", {
+      const res = await fetch(`${API_BASE}/api/vote`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ teamId, userName, vote: voteValue }),
@@ -157,7 +159,7 @@ function App() {
 
   const reveal = async () => {
     try {
-      const res = await fetch("http://localhost:7071/api/reveal", {
+      const res = await fetch(`${API_BASE}/api/reveal`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ teamId, userName }),
