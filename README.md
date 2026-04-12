@@ -47,3 +47,9 @@ Reset backend
 
 Azure Portal -> storysizingstore -> Data Storage -> Containers -> Delete teams.json
 
+# Backend Capacity Control
+
+Azure Portal -> your Function App -> Overview -> Stop
+
+Function App -> Settings -> Configuration -> Function runtime settings -> Daily usage quota (GB)
+
