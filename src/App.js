@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     if (view === 'team' && teamId) {
       fetchStatus();
-      const interval = setInterval(fetchStatus, 1000);
+      const interval = setInterval(fetchStatus, 2000);
       return () => clearInterval(interval);
     }
   }, [view, teamId]);
