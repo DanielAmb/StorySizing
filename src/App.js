@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     if (view === 'team' && teamId) {
       fetchStatus();
-      const interval = setInterval(fetchStatus, 2000);
+      const interval = setInterval(fetchStatus, 1000);
       return () => clearInterval(interval);
     }
   }, [view, teamId]);
@@ -258,7 +258,7 @@ function App() {
         {status?.revealed && status.voteCount === 0 && (
           <div className="status-info">
             <h2>Voting is not active yet</h2>
-            <p>Leader, click Start Voting to begin a round.</p>
+            <p>Click Start Voting to begin a round.</p>
           </div>
         )}
         {status?.revealed && status.voteCount > 0 && (
@@ -281,7 +281,7 @@ function App() {
         )}
         {status?.leader === userName && (
           <div className="leader-actions">
-            <h2>Leader Actions</h2>
+            <h2>Actions</h2>
             <div className="team-info">
               <span>Team ID: <span className="team-id">{teamId}</span></span>
             </div>
