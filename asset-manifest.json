@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/StorySizing/static/css/main.74493c4d.css",
+    "main.js": "/StorySizing/static/js/main.95f7b9e7.js",
+    "static/js/453.e9e7ec89.chunk.js": "/StorySizing/static/js/453.e9e7ec89.chunk.js",
+    "index.html": "/StorySizing/index.html",
+    "main.74493c4d.css.map": "/StorySizing/static/css/main.74493c4d.css.map",
+    "main.95f7b9e7.js.map": "/StorySizing/static/js/main.95f7b9e7.js.map",
+    "453.e9e7ec89.chunk.js.map": "/StorySizing/static/js/453.e9e7ec89.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.74493c4d.css",
+    "static/js/main.95f7b9e7.js"
+  ]
+}
